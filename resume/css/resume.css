@@ -1,0 +1,114 @@
+body {
+	font-family: 'Raleway', sans-serif;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 90%;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	margin-top: -10px;
+	margin-bottom: -10px;
+	line-height: 25px;
+}
+
+th {
+	text-align: left;
+}
+
+h1 {
+	text-transform: uppercase;
+}
+
+footer {
+	padding-top: 25px;
+	padding-bottom: -10px;
+}
+
+hr {
+	width: 90%;
+	margin-left: 5%;
+}
+
+/************
+    handle
+    image
+************/
+
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+.img-responsive.circle {
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+}
+
+.center {
+	text-align: center;
+}
+
+/************
+    handle
+    content
+************/
+
+.block {
+	width: 88%;
+	margin-left: 6%;
+	margin-right: 6%;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+
+.bottom {
+	color: rgba(0,0,0,.4);
+	margin-bottom: -5%;
+	padding-bottom: 5%;
+	text-align: center;
+}
+
+.avatar {
+	width: 170px;
+	box-shadow: 0 0 10px rgba(0,0,0,.8);
+	margin-top: 5%;
+}
+
+.header {
+	height: 50%;
+	text-align: center;
+	background-image: url(../image/bg.jpg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	text-shadow: 0 0 5px rgb(255,255,255);
+}
+
+.line {
+	width: 90%;
+	margin-left: 5%;
+	height: 1px;
+	background-color: rgba(0,0,0,.2);
+}
+
+@media screen and (min-width: 1080px) {
+    body {
+		margin-left: 15%;
+		margin-right: 15%;
+		width: 70%;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+    body {
+		margin-left: 15%;
+		margin-right: 15%;
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.header {
+		height: 50%;
+		background-size: auto 152%;
+		background-position: top center;
+	}
+}
