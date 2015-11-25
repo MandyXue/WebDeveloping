@@ -64,4 +64,44 @@ $(document).ready(function(){
 	}
 	$("#month").on('change', changeDays);
 	$("#year").on('change', changeDays);
+
+
+	//填表
+	$("#submit").click(function(){
+		var username = $("[id='username']").val();
+		var email = $("[id='email']").val();
+		var password = $("[id='password']").val();
+		var password2 = $("[id='password2']").val();
+		if (username == "" || email == "" || password2 == "" || password == "") {
+			alert("前四项不能为空");
+		} else {
+			if (password2 != password) {
+				alert("两次密码输入不一致");
+			} else {
+				$("#result").show();
+				// var scroll_offset = $("#submit").offset();
+	            $("html, body").animate({
+	                scrollTop: $(document).height()
+	            }, "slow");
+				var gender = $("[id='gender']").val();
+				var province = $("[id='province']").val();
+				var city = $("[id='city']").val();
+				var year = $("[id='year']").val();
+				var month = $("[id='month']").val();
+				var day = $("[id='day']").val();
+				var hobby = "";
+				$("[type='checkbox']").each(function () {
+					if ($(this).get(0).checked == true) {
+						hobby = hobby + $(this).val() + " ";
+					};
+				});
+				$("#username-label").html(username);
+				$("#email-label").html(email);
+				$("#gender-label").html(gender);
+				$("#district-label").html(province+'省（直辖市）'+city+'市（区）');
+				$("#birthday-label").html(year+'年'+month+'月'+day+'日');
+				$("#hobby-label").html(hobby);
+			}
+		}
+	});
 });

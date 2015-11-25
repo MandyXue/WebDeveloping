@@ -14,28 +14,28 @@
 			<form class="form-group">
 				<div class="form-inline">
 					<label>用户名：&#12288;</label>
-					<input class="form-control" name="username">
+					<input class="form-control" id="username">
 				</div>
 				<div class="form-inline">
 					<label>密&#12288;码：&#12288;</label>
-					<input class="form-control" name="password">
+					<input class="form-control" id="password" type="password">
 				</div>
 				<div class="form-inline">
 					<label>重复密码：</label>
-					<input class="form-control" name="password2">
+					<input class="form-control" id="password2" type="password">
 				</div>
 				<div class="form-inline">
 					<label>邮&#12288;箱：&#12288;</label>
-					<input class="form-control" name="email">
+					<input class="form-control" id="email">
 				</div>
 				<div class="form-inline">
 					<label>性&#12288;别：&#12288;</label>
 					<div class="radio">
-						<input name="gender" type="radio" value="male"/>
+						<input id="gender" type="radio" value="男" checked="checked"/>
 						<label>男</label>
 					</div>
 					<div class="radio">
-						<input name="gender" type="radio" value="male"/>
+						<input id="gender" type="radio" value="女"/>
 						<label>女</label>
 					</div>
 				</div>
@@ -70,23 +70,23 @@
 				</div>
 				<div class="form-inline">
 					<label>爱&#12288;好：&#12288;</label>
+					<!-- <label class="checkbox-inline">
+						<input type="checkbox" id="hobby" value="全选/全不选"> 全选/全不选
+					</label> -->
 					<label class="checkbox-inline">
-						<input type="checkbox" id="all" value="all"> 全选/全不选
+						<input type="checkbox" id="hobby" value="足球"> 足球
 					</label>
 					<label class="checkbox-inline">
-						<input type="checkbox" id="football" value="football"> 足球
+						<input type="checkbox" id="hobby" value="篮球"> 篮球
 					</label>
 					<label class="checkbox-inline">
-						<input type="checkbox" id="basketball" value="basketball"> 篮球
+						<input type="checkbox" id="hobby" value="游泳"> 游泳
 					</label>
 					<label class="checkbox-inline">
-						<input type="checkbox" id="swimming" value="swimming"> 游泳
+						<input type="checkbox" id="hobby" value="唱歌"> 唱歌
 					</label>
 					<label class="checkbox-inline">
-						<input type="checkbox" id="singing" value="singing"> 唱歌
-					</label>
-					<label class="checkbox-inline">
-						<input type="checkbox" id="drawing" value="drawing"> 绘画
+						<input type="checkbox" id="hobby" value="绘画"> 绘画
 					</label>
 					<br>
 					<div class="btn-together">
@@ -95,16 +95,52 @@
 						<button type="button" class="btn btn-default" id="reverse">反选</button>
 					</div>
 				</div>
+				<br>
+				
 			</form>
-			
 			<div class="middle">
-				<button class="btn btn-primary add">添加</button>
-			</div>
+					<button type="button" class="btn btn-primary add" id="submit">添加</button>
+				</div>
 		</div>
-		<div>
+		<div id="result" style="display:none;" class="cover">
 			<h1 class="middle">添加结果</h1>
-			<table>
-				<th>aaa</th>
+			<table class="table table-bordered table-striped">
+				<tr>
+					<th>用户名</th>
+					<td>
+						<label id="username-label"></label>
+					</td>
+				</tr>
+				<tr>
+					<th>邮箱</th>
+					<td>
+						<label id="email-label"></label>
+					</td>
+				</tr>
+				<tr>
+					<th>性别</th>
+					<td>
+						<label id="gender-label"></label>
+					</td>
+				</tr>
+				<tr>
+					<th>地区</th>
+					<td>
+						<label id="district-label"></label>
+					</td>
+				</tr>
+				<tr>
+					<th>出生年月</th>
+					<td>
+						<label id="birthday-label"></label>
+					</td>
+				</tr>
+				<tr>
+					<th>爱好</th>
+					<td>
+						<label id="hobby-label"></label>
+					</td>
+				</tr>
 			</table>
 		</div>
 	</body>
