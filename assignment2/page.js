@@ -1,7 +1,7 @@
-function deltr(clickTd){  
-		var tr = $(clickTd).parent().parent();  
-		tr.remove();  
-	}
+function deleteDr(clickTd){  
+	var tr = $(clickTd).parent().parent();
+	tr.remove();
+}
 
 $(document).ready(function(){
 	//全选、全不选、反选
@@ -111,22 +111,10 @@ $(document).ready(function(){
 										'<td>'+province+'省（直辖市）'+city+'市（区）'+'</td>'+
 										'<td>'+year+'年'+month+'月'+day+'日'+'</td>'+
 										'<td>'+hobby+'</td>'+
-										'<td><button type="button" class="btn btn-danger btn-sm" id="delete" onclick="deltr(this);">删除此条</button></td>'+
+										'<td><button type="button" class="btn btn-danger btn-sm" id="delete" onclick="deleteDr(this);">删除此条</button></td>'+
 									'</tr>');
 			}
 		}
 	});
-
-	// addBtnEvent("delete");
-	
-	// function addBtnEvent(id){
-	// 	$("#"+id).bind("click",function(){
-	// 		var line = $(this).parent();
-	// 		console.log(line);
-
-	// 		alert("Test");
-	// 	});
-	// }
-
 });
 
