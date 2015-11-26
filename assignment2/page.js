@@ -1,3 +1,8 @@
+function deltr(clickTd){  
+		var tr = $(clickTd).parent().parent();  
+		tr.remove();  
+	}
+
 $(document).ready(function(){
 	//全选、全不选、反选
 	$("#selectAll").click(function(){
@@ -65,24 +70,25 @@ $(document).ready(function(){
 	$("#month").on('change', changeDays);
 	$("#year").on('change', changeDays);
 
-
 	//填表
-	$("#submit").click(function(){
+	$("#submit").click(function(e){
 		var username = $("[id='username']").val();
 		var email = $("[id='email']").val();
 		var password = $("[id='password']").val();
 		var password2 = $("[id='password2']").val();
 		if (username == "" || email == "" || password2 == "" || password == "") {
-			alert("前四项不能为空");
+			$('#myModal1').modal('show');
 		} else {
 			if (password2 != password) {
 				alert("两次密码输入不一致");
 			} else {
+				//show table
 				$("#result").show();
-				// var scroll_offset = $("#submit").offset();
+				//scroll
 	            $("html, body").animate({
 	                scrollTop: $(document).height()
 	            }, "slow");
+	            //get info
 				var gender = $("[id='gender']").val();
 				var province = $("[id='province']").val();
 				var city = $("[id='city']").val();
@@ -95,13 +101,32 @@ $(document).ready(function(){
 						hobby = hobby + $(this).val() + " ";
 					};
 				});
-				$("#username-label").html(username);
-				$("#email-label").html(email);
-				$("#gender-label").html(gender);
-				$("#district-label").html(province+'省（直辖市）'+city+'市（区）');
-				$("#birthday-label").html(year+'年'+month+'月'+day+'日');
-				$("#hobby-label").html(hobby);
+				var lines = $("#tbody tr").length;
+				//print info
+				$("#tbody").append('<tr>'+
+										'<td>'+(lines+1)+'</td>'+
+										'<td>'+username+'</td>'+
+										'<td>'+email+'</td>'+
+										'<td>'+gender+'</td>'+
+										'<td>'+province+'省（直辖市）'+city+'市（区）'+'</td>'+
+										'<td>'+year+'年'+month+'月'+day+'日'+'</td>'+
+										'<td>'+hobby+'</td>'+
+										'<td><button type="button" class="btn btn-danger btn-sm" id="delete" onclick="deltr(this);">删除此条</button></td>'+
+									'</tr>');
 			}
 		}
 	});
+
+	// addBtnEvent("delete");
+	
+	// function addBtnEvent(id){
+	// 	$("#"+id).bind("click",function(){
+	// 		var line = $(this).parent();
+	// 		console.log(line);
+
+	// 		alert("Test");
+	// 	});
+	// }
+
 });
+

@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="external/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="page.css">
 		<script type="text/javascript" src="external/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="external/bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="page.js"></script>
 	</head>
 	<body>
@@ -99,49 +100,69 @@
 				
 			</form>
 			<div class="middle">
-					<button type="button" class="btn btn-primary add" id="submit">添加</button>
-				</div>
+				<button type="button" class="btn btn-primary add" id="submit" data-inner="add" data-target="#myModal">添加</button>
+			</div>
 		</div>
-		<div id="result" style="display:none;" class="cover">
+		<!-- <div id="result" style="display:none;" class="cover"> -->
+		<div id="result" class="cover">
 			<h1 class="middle">添加结果</h1>
-			<table class="table table-bordered table-striped">
-				<tr>
+			<table class="table table-striped">
+				<thead>
+					<th>#</th>
 					<th>用户名</th>
-					<td>
-						<label id="username-label"></label>
-					</td>
-				</tr>
-				<tr>
 					<th>邮箱</th>
-					<td>
-						<label id="email-label"></label>
-					</td>
-				</tr>
-				<tr>
 					<th>性别</th>
-					<td>
-						<label id="gender-label"></label>
-					</td>
-				</tr>
-				<tr>
 					<th>地区</th>
-					<td>
-						<label id="district-label"></label>
-					</td>
-				</tr>
-				<tr>
 					<th>出生年月</th>
-					<td>
-						<label id="birthday-label"></label>
-					</td>
-				</tr>
-				<tr>
 					<th>爱好</th>
-					<td>
-						<label id="hobby-label"></label>
-					</td>
-				</tr>
+					<th>删除</th>
+				</thead>
+				<tbody id="tbody">
+					<tr>
+						<td>daf</td>
+						<td>username</td>
+						<td>email</td>
+						<td>gender</td>
+						<td>province省（直辖市）city市（区）</td>
+						<td>year年month月day日</td>
+						<td>hobby</td>
+						<td><button type="button" class="btn btn-danger btn-sm" id="delete" onclick="deltr(this);">删除此条</button></td>
+					</tr>
+				</tbody>
+				
 			</table>
 		</div>
+		<div class="modal fade bs-example-modal-sm" id="myModal1">
+		  <div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">添加</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>前四项不能为空！</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div class="modal fade bs-example-modal-sm" id="myModal2">
+		  <div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">删除</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>你确认要删除吗？</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 	</body>
 </html>
