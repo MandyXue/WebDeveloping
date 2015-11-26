@@ -89,7 +89,14 @@ $(document).ready(function(){
 	                scrollTop: $(document).height()
 	            }, "slow");
 	            //get info
-				var gender = $("[id='gender']").val();
+				//通过名字获取  getElementsByName
+				var gender = "未选择";
+				var obj = document.getElementsByName("gender");
+			    for(var i=0; i<obj.length; i ++){
+			        if(obj[i].checked){
+			            gender = obj[i].value;
+			        }
+			    }
 				var province = $("[id='province']").val();
 				var city = $("[id='city']").val();
 				var year = $("[id='year']").val();
@@ -104,7 +111,6 @@ $(document).ready(function(){
 				var lines = $("#tbody tr").length;
 				//print info
 				$("#tbody").append('<tr>'+
-										'<td>'+(lines+1)+'</td>'+
 										'<td>'+username+'</td>'+
 										'<td>'+email+'</td>'+
 										'<td>'+gender+'</td>'+
